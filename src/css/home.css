@@ -1,0 +1,24 @@
+.loginBtn {
+    /* border-radius: 35px; */
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+    animation: vibrate 4s ease-in-out infinite alternate;
+}
+.loginBtn:hover{
+  background: linear-gradient(145deg, #b218ff, #c879f0);
+  color: white;
+}
+
+.downArrow {
+    animation: bounce 3s ease-in-out infinite alternate;
+}
+
+@keyframes vibrate {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    25%, 75% {
+      transform: translateY(8px); /* Adjust displacement for vibration intensity */
+    }
+  }

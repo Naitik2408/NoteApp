@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+.dashboardScroller::-webkit-scrollbar {
+    width: 3px; 
+}
+
+/* Set scrollbar track color */
+.dashboardScroller::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.dashboardScroller::-webkit-scrollbar-thumb {
+    background: #e0bbfb; 
+    border-radius: 5px;
+}
+
+
+.dashboardScroller::-webkit-scrollbar-thumb:hover {
+    background: #ac38ff; 
+}
