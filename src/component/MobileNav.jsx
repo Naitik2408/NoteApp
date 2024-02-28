@@ -17,7 +17,7 @@ function MobileNav() {
         }
     }
     return (
-        <div className='w-full h-full flex flex-col gap-2'>
+        <div className='w-full h-full flex flex-col gap-2 bg-red-300'>
             <Link to={"/profile/"}>
                 <div className='border-b-2 py-4 flex items-center gap-3' onClick={handleMobileNav}><CiGrid41 /> Dashboard</div>
             </Link>

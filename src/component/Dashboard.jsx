@@ -37,7 +37,7 @@ function Dashboard() {
     }
     return (
         <div className='h-full'>
-            <div className='md:text-3xl font-semibold text-gray-700 flex justify-between h-[10%] items-center md:h-[15%] md:items-start text-xl relative'>
+            <div className='md:text-3xl font-semibold text-gray-700 flex justify-between h-[10%] items-center md:h-[15%] md:items-start text-xl relative border-b-gray-200 border-b-2 md:border-b-0'>
                 <div className='flex gap-8 items-center'>
                     <div>Your Notes..</div>
                 </div>
@@ -69,7 +69,7 @@ function Dashboard() {
 
                 </div> :
                 <div className='dashboardScroller flex md:justify-between justify-center items-center md:py-8 md:h-[85%] h-[90%] overflow-auto'>
-                    <div className='h-full flex flex-wrap md:justify-between justify-center gap-4 md:px-3'>
+                    <div className='h-full md:px-3 flex flex-col md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
                         {userData.map(item => {
                             return <Notecard key={item.$id} title={item.NoteTitle} note={item.Note} />
                         })}

@@ -9,6 +9,7 @@ import AddNote from './component/AddNote'
 import ProfileInProfile from './component/ProfileInProfile';
 import { useDispatch } from 'react-redux';
 import { loadUserData } from './app/authSlice';
+import Verify from './pages/Verify';
 
 
  
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/verify" element={<Verify/>} />
         <Route path="/profile" element={<Profile />}>
           <Route path='/profile/' element={<Dashboard/>} />
           <Route path='/profile/addNote' element={<AddNote/>} />
