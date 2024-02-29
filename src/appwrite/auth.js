@@ -56,7 +56,12 @@ export class AuthService {
 
   async verifyUser() {
     try {
-      return await this.account.createVerification("*.vercel.app/verify");
+      return await this.account.createVerification("*.vercel.app/verify").then((response) => {
+        toast.info("Verification link has been send to your email, please verify your account by clicking on it!",{
+            position: toast.POSITION.TOP_RIGHT
+        })
+        console.log("Verification link has been sended to your email, please verify your account ",response);
+    })
       // return await this.account.createVerification(conf.verification_url);
     } catch (error) {
       console.log(error);

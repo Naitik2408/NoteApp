@@ -21,13 +21,13 @@ function SignUp() {
     
     try {
       await authService.createAccount(uData);
-      let res = await authService.verifyUser();
-      if(res){
-        console.log(res)
-        alert("An email has been sent to your inbox. Please verify your account to proceed.")
-      }else{
-        console.log('issue with verification')
-      }
+      await authService.verifyUser();
+      // if(res){
+      //   console.log(res)
+      //   alert("An email has been sent to your inbox. Please verify your account to proceed.")
+      // }else{
+      //   console.log('issue with verification')
+      // }
     } catch (error) {
       alert(error.message);
     } finally {
