@@ -56,9 +56,7 @@ export class AuthService {
 
   async verifyUser() {
     try {
-      return await this.account.createVerification(
-        "https://note-app-one-delta.vercel.app/verify"
-      );
+      return await this.account.createVerification(conf.verification_url);
     } catch (error) {
       console.log(error);
     }
