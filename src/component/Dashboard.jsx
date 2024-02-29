@@ -53,7 +53,7 @@ function Dashboard() {
                 </div>
                 
                 {
-                    mobileNav ? <div className='absolute top-10 bg-white w-full py-8'>
+                    mobileNav ? <div className='absolute top-20 bg-white w-full py-8'>
                     <MobileNav/>
                 </div> : null
                 }
@@ -69,9 +69,9 @@ function Dashboard() {
 
                 </div> :
                 <div className='dashboardScroller flex md:justify-between justify-center items-center md:py-8 md:h-[85%] h-[90%] overflow-auto'>
-                    <div className='h-full md:px-3 flex flex-col md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
+                    <div className='h-full w-full md:px-3 flex flex-col md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
                         {userData.map(item => {
-                            return <Notecard key={item.$id} title={item.NoteTitle} note={item.Note} />
+                            return <Notecard key={item.$id} title={item.NoteTitle} note={item.Note} myId={item.$id} />
                         })}
                     </div>
                 </div>

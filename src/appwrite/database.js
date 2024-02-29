@@ -46,6 +46,14 @@ export class Service{
             console.log('this is getpost error: ', error)
         }
     }
+
+    async deleteDocument({documentId}){
+        try {
+          return await this.databases.deleteDocument(conf.database_id, conf.collection_id, documentId);
+        } catch (error) {
+          throw error;
+        }
+      }
 }
 
 const service = new Service()

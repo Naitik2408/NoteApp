@@ -56,12 +56,9 @@ export class AuthService {
 
   async verifyUser() {
     try {
-      const response = await this.account.createVerification(
-        "localhost:5173/verify"
+      return await this.account.createVerification(
+        "http://localhost:5173/verify"
       );
-      if (response) {
-        console.log(response);
-      }
     } catch (error) {
       console.log(error);
     }

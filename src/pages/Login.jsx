@@ -11,7 +11,6 @@ import { FaRegEyeSlash } from "react-icons/fa";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
-  const [loginError, setLoginError] = useState(null);
   const [loder, setLoder] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
@@ -33,9 +32,7 @@ function Login() {
         }
       }
     } catch (error) {
-      console.log(error.message);
-      setLoginError(error.message)
-      alert(loginError)
+      alert(error.message);
     } finally {
       setLoder(false)
     }

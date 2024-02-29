@@ -24,9 +24,6 @@ const authSlice = createSlice({
             if (userData) {
                 state.status = true;
                 state.userData = userData;
-                console.log("load complete ",userData )
-                console.log(state.status);
-                console.log(state.userData)
             }
         }
      }

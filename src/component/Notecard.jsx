@@ -2,8 +2,21 @@ import React from 'react'
 import img2 from "../assets/9805251_Mesa de trabajo 1.png";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
+import service from '../appwrite/database';
 
-function Notecard({ title = "Title1", note = "hey everyone i am naitik." }) {
+function Notecard({ title = "Title1", note = "hey everyone i am naitik.", myId }) {
+    const deleteNote=async (e)=>{
+        e.preventDefault();
+        try {
+            let res = await service.deleteDocument({documentId:myId})
+            if(res){
+                console.log("deleted sucessfully")
+            }
+        } catch (error) {
+            console.log(error);
+            console.log("not deleted try again");
+        }
+    }
     return (
         <div className='w-full min-w-[200px] group justify-between md:h-fit md:min-h-40 min-h-28 bg-gray-200 p-3 flex flex-col rounded-md cursor-pointer hover:bg-gray-300 h-fit'>
             <div>
@@ -14,8 +27,8 @@ function Notecard({ title = "Title1", note = "hey everyone i am naitik." }) {
                 <div>{note}</div>
             </div>
             <div className='flex md:hidden justify-end gap-4 group-hover:flex mt-3 md:mt-0'>
-                <div className='bg-gray-50 rounded-md p-2 hover:bg-white'><FaRegEdit/></div>
-                <div className='bg-red-400 rounded-md p-2 hover:bg-red-500'><RiDeleteBin5Line/></div>
+                {/* <div className='bg-gray-50 rounded-md p-2 hover:bg-white'><FaRegEdit/></div> */}
+                <div className='bg-red-400 rounded-md p-2 hover:bg-red-500' onClick={deleteNote}><RiDeleteBin5Line/></div>
             </div>
 
         </div>

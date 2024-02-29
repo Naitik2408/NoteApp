@@ -34,10 +34,9 @@ function Profile() {
       navigate("/login")
     })
   }
-
   return (
     <div className='w-screen h-screen flex justify-between'>
-      {(currentUserDetails.status && currentUserDetails.userData) ?
+      {(currentUserDetails.status && currentUserDetails.userData.emailVerification) ?
         <div className='w-full h-full flex'>
           <div className='w-[25%] h-full p-5 md:flex flex-col justify-between shadow-md shadow-gray-400 hidden'>
             <div>
@@ -80,7 +79,7 @@ function Profile() {
         <div className='h-screen w-screen bg-white flex flex-col gap-4 justify-center items-center'>
           <div className='flex flex-col gap-4 justify-center items-center' >
             <FaFaceSadTear className='text-9xl animate-bounce' />
-            <div className='text-xl'>You are not logged in. Please login to access the features of this app.</div>
+            <div className='text-xl px-9 text-center'>You are not logged in or not verified your account. Please login or verify to access the features of this app.</div>
           </div>
           <Link to={"/login"}><div className='loginBtn w-fit py-2 px-4 rounded-md cursor-pointer' >Login</div></Link>
         </div>

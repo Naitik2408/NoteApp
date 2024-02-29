@@ -7,7 +7,7 @@ function Home() {
   const nevigate = useNavigate();
   useEffect(()=>{
     const userData = JSON.parse(localStorage.getItem('userData'));
-      if(userData){
+      if(userData.emailVerification){
         nevigate("/profile")
       }
   },[])

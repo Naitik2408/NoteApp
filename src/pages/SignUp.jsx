@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import img1 from "../assets/studio_pc_2328_37 [Converted]-01.png"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import authService from '../appwrite/auth';
 import Loder from '../component/Loder';
 import { IoEyeOutline } from "react-icons/io5";
@@ -12,18 +12,24 @@ function SignUp() {
   const [password, setPassword] = useState("")
   const [loder, setLoder] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   const uData = { email, name, password }
 
   const signupHandler = async (e) => {
     e.preventDefault();
     setLoder(true);
+    
     try {
-      let response = await authService.createAccount(uData);
-      if (response) {
-        localStorage.setItem('userData', JSON.stringify(response.userData));
+      await authService.createAccount(uData);
+      let res = await authService.verifyUser();
+      if(res){
+        console.log(res)
+        alert("An email has been sent to your inbox. Please verify your account to proceed.")
+      }else{
+        console.log('issue with verification')
       }
     } catch (error) {
-      throw error
+      alert(error.message);
     } finally {
       setLoder(false);
     }
