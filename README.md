@@ -1,8 +1,54 @@
-# React + Vite
+# Note App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![App screenshot](./public/logo.png)
+
+
+
+Create Notes and enjoy their multiple features. Visit the live demo [here](https://note-app-black-eight.vercel.app/)
+
+
+
+## Features
+
+
+
+- Sign up to create your profile.
+
+- Verification via Gmail account.
+
+- Login to Your account.
+
+- Create your Notes.
+
+- Delete Notes.
+
+
+
+## Version V1.0.0
+
+
+
+### Available Features
+
+
+
+- Sign up to create your profile.
+
+- Verification via Gmail account.
+
+- Login to Your account.
+
+- Create your Notes.
+
+- Delete Notes.
+
+
+
+### Issue
+
+* There is a verification issue. It does not work properly and sometimes it shows the error message "Error: Invalid url params.
+
+
+
