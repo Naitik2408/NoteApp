@@ -20,8 +20,20 @@ function SignUp() {
     setLoder(true);
     
     try {
-      await authService.createAccount(uData);
-      await authService.verifyUser();
+      const res = await authService.createAccount(uData);
+      if(res){
+        console.log(res)
+        alert('Accout is created sucessfully');
+        navigate('/login')
+      }
+
+
+      // *******
+      // await authService.verifyUser();  
+      // temprory remove the  verify user function as it is not working properly
+      // *******
+
+
       // if(res){
       //   console.log(res)
       //   alert("An email has been sent to your inbox. Please verify your account to proceed.")

@@ -36,7 +36,8 @@ function Profile() {
   }
   return (
     <div className='w-screen h-screen flex justify-between'>
-      {(currentUserDetails.status && currentUserDetails.userData.emailVerification) ?
+      {(currentUserDetails.status) ?
+      // {(currentUserDetails.status && currentUserDetails.userData.emailVerification) ?
         <div className='w-full h-full flex'>
           <div className='w-[25%] h-full p-5 md:flex flex-col justify-between shadow-md shadow-gray-400 hidden'>
             <div>
